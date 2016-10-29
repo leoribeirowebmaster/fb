@@ -15,8 +15,8 @@ mkdir -p /var/www/django/media
 cp -a /media /var/www/django/media
 rm -r /etc/init/gunicorn.conf
 rm -r /etc/nginx/sites-available/django
-ln -s /home/django/framework-base/gunicorn.conf /etc/init/gunicorn.conf
-ln -s /home/django/framework-base/django /etc/nginx/sites-available/django
+ln -s /root/django/framework-base/gunicorn.conf /etc/init/gunicorn.conf
+ln -s /root/django/framework-base/django /etc/nginx/sites-available/django
 echo 'create database if not exists '$database';' | mysql -u root -p$password
 python3 manage.py makemigrations
 python3 manage.py migrate
